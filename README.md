@@ -1,21 +1,6 @@
 <div id="top"></div>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
 
 <!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
-
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -30,10 +15,10 @@
     <img src="./public/images/site-screenshot.png" alt="Portfolio Screenshot" width="800">
   </a>
 
-<h3 align="center">Advent Hub Solutions Llc Portfolio</h3>
+<h3 align="center">Louis Brent's Portfolio</h3>
 
   <p align="center">
-    My favorite personal projects. Be sure to click "View Demo" below to view the live site.
+    A modern, animated portfolio showcasing my journey as a Full-Stack Developer. Built with Next.js, Styled-Components, and Framer Motion.
     <br />
     <a href="https://github.com/louisbrent1992/My-Personal-Portfolio"><strong>Explore the docs »</strong></a>
     <br />
@@ -50,9 +35,9 @@
 <details>
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#built-with">Built With</a>
-    </li>
+    <li><a href="#about-the-project">About The Project</a></li>
+    <li><a href="#built-with">Built With</a></li>
+    <li><a href="#featured-projects">Featured Projects</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -60,7 +45,6 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
@@ -69,11 +53,45 @@
   </ol>
 </details>
 
+## About The Project
+
+Hi, I'm **Louis Brent** — a Full-Stack Engineer crafting beautiful, scalable digital experiences with modern technologies and a passion for clean code.
+
+This portfolio features:
+- 🎨 **Premium UI/UX** — Glassmorphism effects, smooth gradients, and micro-animations
+- ⚡ **Dynamic Timeline** — An interactive journey through my career milestones
+- 🚀 **Project Showcase** — Live demos and source code for my best work
+- 📱 **Fully Responsive** — Optimized for all device sizes
+- ✨ **Framer Motion Animations** — Scroll-triggered reveals and hover effects
+
+### By The Numbers
+| Stat | Value |
+|------|-------|
+| 🛠️ Open Source Projects | 60+ |
+| 📊 GitHub Contributions | 400+ |
+| 😊 Happy Clients | 50+ |
+| 📅 Years Experience | 5+ |
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ### Built With
 
-- [Next.js](https://nextjs.org/)
-- [Bootstrap](https://getbootstrap.com)
-- [JQuery](https://jquery.com)
+- [Next.js](https://nextjs.org/) - React framework for production
+- [Styled-Components](https://styled-components.com/) - CSS-in-JS styling
+- [Framer Motion](https://www.framer.com/motion/) - Animation library
+- [React Icons](https://react-icons.github.io/react-icons/) - Icon library
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Featured Projects
+
+| Project | Description | Tech Stack |
+|---------|-------------|------------|
+| **Restaurant Reservation System** | A reservation system for fine dining restaurants | React, Node, PostgreSQL, Express |
+| **RecipEase: AI Recipe Scanner** | AI-powered recipe generator using OpenAI | Dart, Flutter, OpenAI, DALL-E |
+| **Music Label Site** | Fully responsive music label website template | React, Styled-Components |
+| **Flashcards Study App** | Educational flashcard platform for teachers & students | React, Node, Bootstrap |
+| **eCommerce Template** | Modern e-commerce website with full functionality | React, Redux, MongoDB, Express |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -81,43 +99,35 @@
 
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running, follow these steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Make sure you have Node.js and npm installed.
 
-- npm
-  ```sh
-  npm install npm@latest -g
-  ```
+```sh
+npm install npm@latest -g
+```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/louisbrent1992/My-Personal-Portfolio.git
+   ```
+2. Navigate to the project directory
+   ```sh
+   cd My-Personal-Portfolio
    ```
 3. Install NPM packages
    ```sh
    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = "ENTER YOUR API";
+4. Start the development server
+   ```sh
+   npm run dev
    ```
-
-<p align="right">(<a href="#top">back to top</a>)</p>
-
-<!-- USAGE EXAMPLES -->
-
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -125,10 +135,13 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ## Roadmap
 
-- [ ] Feature 1
-- [ ] Feature 2
-- [ ] Feature 3
-  - [ ] Nested Feature
+- [x] Dynamic timeline with animations
+- [x] Project showcase with live demos
+- [x] Responsive design for all devices
+- [x] Dark mode glassmorphism theme
+- [ ] Blog section
+- [ ] Contact form integration
+- [ ] i18n multi-language support
 
 See the [open issues](https://github.com/louisbrent1992/My-Personal-Portfolio/issues) for a full list of proposed features (and known issues).
 
@@ -139,9 +152,6 @@ See the [open issues](https://github.com/louisbrent1992/My-Personal-Portfolio/is
 ## Contributing
 
 Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
@@ -163,7 +173,7 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 
 ## Contact
 
-Your Name - [@louisbrent1992](https://twitter.com/louisbrent1992) - louisbrent1992@Gmail.com
+**Louis Brent** - [@louisbrent1992](https://twitter.com/louisbrent1992) - louisbrent1992@gmail.com
 
 Project Link: [https://github.com/louisbrent1992/My-Personal-Portfolio](https://github.com/louisbrent1992/My-Personal-Portfolio)
 
@@ -174,11 +184,12 @@ Project Link: [https://github.com/louisbrent1992/My-Personal-Portfolio](https://
 ## Acknowledgments
 
 - [JavaScript Mastery](https://jsmasterypro.com/)
+- [Framer Motion](https://www.framer.com/motion/)
+- [Styled-Components](https://styled-components.com/)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/louisbrent1992/My-Personal-Portfolio.svg?style=for-the-badge
 [contributors-url]: https://github.com/louisbrent1992/My-Personal-Portfolio/graphs/contributors
@@ -192,4 +203,3 @@ Project Link: [https://github.com/louisbrent1992/My-Personal-Portfolio](https://
 [license-url]: https://github.com/louisbrent1992/My-Personal-Portfolio/blob/master/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/louis-brent
-[product-screenshot]: images/screenshot.png
