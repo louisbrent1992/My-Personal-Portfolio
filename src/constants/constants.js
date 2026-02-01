@@ -1,9 +1,10 @@
 export const projects = [
 	{
-		title: "RecipEase: AI Recipe Scanner App",
+		title: "RecipEase: AI Recipe Scanner",
 		description:
 			"Utilizes OpenAI to generate creative and tasty recipes based on available ingredients. Say goodbye to wondering what to cook with RecipEase!",
 		image: "./images/recipeFinderScreen.png",
+		video: "./videos/recipease-preview.mp4",
 		tags: ["Dart", "Flutter", "OpenAI", "DALL-E"],
 		code: "https://github.com/louisbrent1992/flutter-recipe-app",
 		visit: "https://apps.apple.com/us/app/recipeease-kitchen/id6748662065",
@@ -16,7 +17,7 @@ export const projects = [
 		image: "./images/recipeFinderScreen.png",
 		tags: ["React", "Styled-Components", "OpenAI"],
 		code: "https://github.com/louisbrent1992/recipe-generator-api",
-		visit: "https://recipe-finder-app-v1.onrender.com",
+		visit: "https://recipease.kitchen",
 		id: 1,
 	},
 	{

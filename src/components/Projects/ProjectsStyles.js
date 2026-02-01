@@ -17,7 +17,16 @@ const glowPulse = keyframes`
 
 export const Img = styled.img`
   width: 100%;
-  height: 220px;
+  height: 250px;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+`;
+
+export const Video = styled.video`
+  width: 100%;
+  height: 250px;
   object-fit: cover;
   overflow: hidden;
   border-radius: 16px 16px 0 0;
@@ -86,7 +95,7 @@ export const BlogCard = styled.div`
       background: linear-gradient(135deg, #00FFF5 0%, #7B42F6 50%, #FF00E5 100%);
     }
 
-    ${Img} {
+    ${Img}, ${Video} {
       transform: scale(1.08);
     }
   }

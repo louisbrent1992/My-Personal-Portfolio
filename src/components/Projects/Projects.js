@@ -14,6 +14,7 @@ import {
   TitleContent,
   UtilityList,
   Img,
+  Video,
 } from "./ProjectsStyles";
 import {
   Section,
@@ -53,7 +54,7 @@ const Projects = () => (
     </motion.div>
 
     <GridContainer>
-      {projects.map(({ id, image, title, description, tags, code, visit }, index) => (
+      {projects.map(({ id, image, video, title, description, tags, code, visit }, index) => (
         <motion.div
           key={id}
           custom={index}
@@ -64,7 +65,14 @@ const Projects = () => (
           style={{ width: '100%' }}
         >
           <BlogCard>
-            <Img src={image} alt={title} />
+            {video ? (
+              <Video autoPlay loop muted playsInline>
+                <source src={video} type="video/mp4" />
+                Your browser does not support the video tag.
+              </Video>
+            ) : (
+              <Img src={image} alt={title} />
+            )}
             <TitleContent>
               <HeaderThree title>{title}</HeaderThree>
               <Hr />
