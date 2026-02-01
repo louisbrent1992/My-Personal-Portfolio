@@ -87,11 +87,12 @@ This portfolio features:
 
 | Project | Description | Tech Stack |
 |---------|-------------|------------|
-| **Restaurant Reservation System** | A reservation system for fine dining restaurants | React, Node, PostgreSQL, Express |
 | **RecipEase: AI Recipe Scanner** | AI-powered recipe generator using OpenAI | Dart, Flutter, OpenAI, DALL-E |
+| **RecipEase Website** | Official landing page for RecipEase | React, Styled-Components, OpenAI |
 | **Music Label Site** | Fully responsive music label website template | React, Styled-Components |
+| **Tic Tac Toe** | Simple Tic Tac Toe game | HTML, CSS, JavaScript |
+| **Restaurant Reservation System** | Reservation system for fine dining restaurants | React, Node, PostgreSQL, Express |
 | **Flashcards Study App** | Educational flashcard platform for teachers & students | React, Node, Bootstrap |
-| **eCommerce Template** | Modern e-commerce website with full functionality | React, Redux, MongoDB, Express |
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
