@@ -66,7 +66,7 @@ const Projects = () => (
         >
           <BlogCard>
             {video ? (
-              <Video autoPlay loop muted playsInline>
+              <Video autoPlay loop muted playsInline poster={image}>
                 <source src={video} type="video/mp4" />
                 Your browser does not support the video tag.
               </Video>
