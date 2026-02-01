@@ -14,41 +14,6 @@ const glowPulse = keyframes`
   0%, 100% { box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
   50% { box-shadow: 0 20px 60px rgba(123, 66, 246, 0.3); }
 `;
-export const PlayButton = styled.div`
-  position: absolute;
-  top: 125px; /* Center of the card's image area (250px / 2) */
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
-  color: rgba(255, 255, 255, 0.85);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  pointer-events: none; /* Let clicks pass through to the video container */
-
-  svg {
-    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
-  }
-
-  ${BlogCard}:hover & {
-    transform: translate(-50%, -50%) scale(1.1);
-    color: #fff;
-  }
-`;
-
-export const VideoContainer = styled.div`
-  position: relative;
-  width: 100%;
-  height: 250px;
-  overflow: hidden;
-  border-radius: 16px 16px 0 0;
-  cursor: pointer;
-
-  &:hover ${PlayButton} {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(1.2);
-  }
-`;
-
 export const Img = styled.img`
   width: 100%;
   height: 250px;
@@ -64,27 +29,6 @@ export const Video = styled.video`
   object-fit: cover;
   border-radius: 16px 16px 0 0;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-`;
-
-export const GridContainer = styled.section`
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
-  padding: 4rem 2rem;
-  place-items: center;
-  column-gap: 2.5rem;
-  row-gap: 3rem;
-
-  @media ${(props) => props.theme.breakpoints.md} {
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    padding: 3rem 1.5rem;
-    gap: 2rem;
-  }
-
-  @media ${(props) => props.theme.breakpoints.sm} {
-    display: flex;
-    flex-direction: column;
-    padding: 2rem 1rem;
-  }
 `;
 
 export const BlogCard = styled.div`
@@ -138,139 +82,197 @@ export const BlogCard = styled.div`
   }
 `;
 
+export const PlayButton = styled.div`
+  position: absolute;
+  top: 125px; /* Center of the card's image area (250px / 2) */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: none; /* Let clicks pass through to the video container */
+
+  svg {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+  }
+
+  ${BlogCard}:hover & {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: #fff;
+  }
+`;
+
+export const VideoContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  cursor: pointer;
+
+  &:hover ${PlayButton} {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+`;
+
+
+
+export const GridContainer = styled.section`
+display: grid;
+grid - template - columns: repeat(auto - fill, minmax(380px, 1fr));
+padding: 4rem 2rem;
+place - items: center;
+column - gap: 2.5rem;
+row - gap: 3rem;
+
+@media ${(props) => props.theme.breakpoints.md} {
+  grid - template - columns: repeat(auto - fill, minmax(320px, 1fr));
+  padding: 3rem 1.5rem;
+  gap: 2rem;
+}
+
+@media ${(props) => props.theme.breakpoints.sm} {
+  display: flex;
+  flex - direction: column;
+  padding: 2rem 1rem;
+}
+`;
+
 export const TitleContent = styled.div`
-  text-align: center;
-  font-weight: 900;
-  z-index: 20;
-  color: ${(props) => props.theme.colors.primary1};
-  margin-inline: 1.5rem;
-  padding-top: 1.5rem;
+text - align: center;
+font - weight: 900;
+z - index: 20;
+color: ${(props) => props.theme.colors.primary1};
+margin - inline: 1.5rem;
+padding - top: 1.5rem;
 `;
 
 export const HeaderThree = styled.h3`
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  padding: 0.5rem 0;
-  font-size: ${(props) => (props.title ? "2.4rem" : "1.8rem")};
-  background: linear-gradient(135deg, #00FFF5 0%, #7B42F6 50%, #FF00E5 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: background-position 0.5s ease;
+font - weight: 700;
+letter - spacing: 0.5px;
+padding: 0.5rem 0;
+font - size: ${(props) => (props.title ? "2.4rem" : "1.8rem")};
+background: linear - gradient(135deg, #00FFF5 0 %, #7B42F6 50 %, #FF00E5 100 %);
+background - size: 200 % auto;
+-webkit - background - clip: text;
+-webkit - text - fill - color: transparent;
+transition: background - position 0.5s ease;
 
-  ${BlogCard}:hover & {
-    animation: ${shimmer} 2s linear infinite;
+  ${BlogCard}: hover & {
+  animation: ${shimmer} 2s linear infinite;
   }
 `;
 
 export const Hr = styled.hr`
-  width: 60px;
-  height: 3px;
-  margin: 16px auto;
-  border: 0;
-  background: linear-gradient(90deg, #00FFF5 0%, #7B42F6 50%, #FF00E5 100%);
-  border-radius: 100px;
-  opacity: 0.6;
-  transition: all 0.3s ease;
+width: 60px;
+height: 3px;
+margin: 16px auto;
+border: 0;
+background: linear - gradient(90deg, #00FFF5 0 %, #7B42F6 50 %, #FF00E5 100 %);
+border - radius: 100px;
+opacity: 0.6;
+transition: all 0.3s ease;
 
-  ${BlogCard}:hover & {
-    width: 100px;
-    opacity: 1;
-  }
-`;
+  ${BlogCard}: hover & {
+  width: 100px;
+  opacity: 1;
+}
+  `;
 
 export const StackContainer = styled.div`
-  padding-block: 1rem;
+padding - block: 1rem;
 `;
 
 export const Intro = styled.div`
-  width: 170px;
-  margin: 0 auto;
-  color: ${(props) => props.theme.colors.primary1};
-  font-size: 13px;
-  font-style: italic;
-  line-height: 18px;
+width: 170px;
+margin: 0 auto;
+color: ${(props) => props.theme.colors.primary1};
+font - size: 13px;
+font - style: italic;
+line - height: 18px;
 `;
 
 export const CardInfo = styled.p`
-  color: rgba(255, 255, 255, 0.65);
-  margin-inline: 2rem;
-  font-size: 1.5rem;
-  line-height: 26px;
-  text-align: center;
-  margin-top: 1.5rem;
-  margin-bottom: 1.5rem;
+color: rgba(255, 255, 255, 0.65);
+margin - inline: 2rem;
+font - size: 1.5rem;
+line - height: 26px;
+text - align: center;
+margin - top: 1.5rem;
+margin - bottom: 1.5rem;
 
-  @media ${(props) => props.theme.breakpoints.sm} {
-    font-size: 1.4rem;
-    margin-inline: 1.5rem;
-  }
+@media ${(props) => props.theme.breakpoints.sm} {
+  font - size: 1.4rem;
+  margin - inline: 1.5rem;
+}
 `;
 
 export const UtilityList = styled.ul`
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 2rem 0;
+list - style - type: none;
+padding: 0;
+display: flex;
+justify - content: center;
+gap: 1.5rem;
+margin: 2rem 0;
 `;
 
 export const ExternalLinks = styled.a`
-  color: white;
-  font-size: 1.4rem;
-  font-weight: 600;
-  padding: 12px 28px;
-  background: transparent;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 100px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
+color: white;
+font - size: 1.4rem;
+font - weight: 600;
+padding: 12px 28px;
+background: transparent;
+border: 1px solid rgba(255, 255, 255, 0.2);
+border - radius: 100px;
+transition: all 0.3s cubic - bezier(0.4, 0, 0.2, 1);
+position: relative;
+overflow: hidden;
+backdrop - filter: blur(10px);
 
-  &:first-child {
-    background: linear-gradient(135deg, #00FFF5 0%, #7B42F6 100%);
-    border: none;
+  &: first - child {
+  background: linear - gradient(135deg, #00FFF5 0 %, #7B42F6 100 %);
+  border: none;
     
     &:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 30px rgba(0, 255, 245, 0.3);
-    }
+    transform: translateY(-3px);
+    box - shadow: 0 10px 30px rgba(0, 255, 245, 0.3);
   }
+}
 
-  &:last-child {
+  &: last - child {
     &:hover {
-      border-color: #FF00E5;
-      color: #FF00E5;
-      box-shadow: 0 0 20px rgba(255, 0, 229, 0.2);
-      transform: translateY(-3px);
-    }
+    border - color: #FF00E5;
+    color: #FF00E5;
+    box - shadow: 0 0 20px rgba(255, 0, 229, 0.2);
+    transform: translateY(-3px);
   }
+}
 `;
 
 export const TagList = styled.ul`
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.8rem;
-  margin-inline: 1.5rem;
-  margin-bottom: 0.5rem;
+display: flex;
+justify - content: center;
+flex - wrap: wrap;
+gap: 0.8rem;
+margin - inline: 1.5rem;
+margin - bottom: 0.5rem;
 `;
 
 export const Tag = styled.li`
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 1.2rem;
-  font-weight: 500;
-  background: rgba(255, 255, 255, 0.05);
-  padding: 6px 14px;
-  border-radius: 100px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
+color: rgba(255, 255, 255, 0.8);
+font - size: 1.2rem;
+font - weight: 500;
+background: rgba(255, 255, 255, 0.05);
+padding: 6px 14px;
+border - radius: 100px;
+border: 1px solid rgba(255, 255, 255, 0.1);
+transition: all 0.3s ease;
 
   &:hover {
-    background: rgba(0, 255, 245, 0.1);
-    border-color: rgba(0, 255, 245, 0.3);
-    color: #00FFF5;
-  }
+  background: rgba(0, 255, 245, 0.1);
+  border - color: rgba(0, 255, 245, 0.3);
+  color: #00FFF5;
+}
 `;
