@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import { FaPlayCircle } from "react-icons/fa";
 
 import {
   BlogCard,
@@ -15,6 +16,8 @@ import {
   UtilityList,
   Img,
   Video,
+  VideoContainer,
+  PlayButton,
 } from "./ProjectsStyles";
 import {
   Section,
@@ -35,6 +38,44 @@ const cardVariants = {
       ease: "easeOut"
     }
   })
+};
+
+const VideoPlayer = ({ video, image }) => {
+  const videoRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlay = () => {
+    if (videoRef.current) {
+      if (isPlaying) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
+
+  return (
+    <VideoContainer onClick={handlePlay}>
+      {!isPlaying && (
+        <PlayButton>
+          <FaPlayCircle size="5rem" />
+        </PlayButton>
+      )}
+      <Video
+        ref={videoRef}
+        loop
+        muted
+        playsInline
+        poster={image}
+        onPlay={() => setIsPlaying(true)}
+        onPause={() => setIsPlaying(false)}
+      >
+        <source src={video} type="video/mp4" />
+        Your browser does not support the video tag.
+      </Video>
+    </VideoContainer>
+  );
 };
 
 const Projects = () => (
@@ -66,10 +107,7 @@ const Projects = () => (
         >
           <BlogCard>
             {video ? (
-              <Video autoPlay loop muted playsInline poster={image}>
-                <source src={video} type="video/mp4" />
-                Your browser does not support the video tag.
-              </Video>
+              <VideoPlayer video={video} image={image} />
             ) : (
               <Img src={image} alt={title} />
             )}

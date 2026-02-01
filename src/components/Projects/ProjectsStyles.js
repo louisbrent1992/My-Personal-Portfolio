@@ -14,6 +14,40 @@ const glowPulse = keyframes`
   0%, 100% { box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3); }
   50% { box-shadow: 0 20px 60px rgba(123, 66, 246, 0.3); }
 `;
+export const PlayButton = styled.div`
+  position: absolute;
+  top: 125px; /* Center of the card's image area (250px / 2) */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  color: rgba(255, 255, 255, 0.85);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  pointer-events: none; /* Let clicks pass through to the video container */
+
+  svg {
+    filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.4));
+  }
+
+  ${BlogCard}:hover & {
+    transform: translate(-50%, -50%) scale(1.1);
+    color: #fff;
+  }
+`;
+
+export const VideoContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 250px;
+  overflow: hidden;
+  border-radius: 16px 16px 0 0;
+  cursor: pointer;
+
+  &:hover ${PlayButton} {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(1.2);
+  }
+`;
 
 export const Img = styled.img`
   width: 100%;
@@ -26,9 +60,8 @@ export const Img = styled.img`
 
 export const Video = styled.video`
   width: 100%;
-  height: 250px;
+  height: 100%; /* Fill the container */
   object-fit: cover;
-  overflow: hidden;
   border-radius: 16px 16px 0 0;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 `;
