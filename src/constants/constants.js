@@ -14,7 +14,7 @@ export const projects = [
 		title: "RecipEase Website",
 		description:
 			"The official landing page for RecipEase. Designed to showcase the app's features and provide a seamless link to the App Store.",
-		image: "./images/recipeFinderScreen.png",
+		image: "./images/recipease-website.png",
 		tags: ["React", "Styled-Components", "OpenAI"],
 		code: "https://github.com/louisbrent1992/recipe-generator-api",
 		visit: "https://recipease.kitchen",
