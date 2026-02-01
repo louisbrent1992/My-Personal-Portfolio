@@ -27,7 +27,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/louisbrent1992/My-Personal-Portfolio">
-    <img src="./public/images/portfolio.png" alt="Logo">
+    <img src="./public/images/site-screenshot.png" alt="Portfolio Screenshot" width="800">
   </a>
 
 <h3 align="center">Advent Hub Solutions Llc Portfolio</h3>
