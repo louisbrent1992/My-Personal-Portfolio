@@ -51,13 +51,13 @@ export const projects = [
 		id: 4,
 	},
 	{
-		title: "Flashcards Study App",
+		title: "Deaf Church Online",
 		description:
-			"Designed to help teachers create decks of flashcards for their students. Teachers can create, upload, edit, and delete flashcards, while students can study the decks online.",
-		image: "./images/Flashcard-o-matic.png",
-		tags: ["React", "Node", "Bootstrap"],
-		code: "https://github.com/louisbrent1992/Flashcards-App",
-		visit: "https://lbprojects-flashcards-study-app.vercel.app",
+			"An online ministry providing worship, fellowship, and spiritual growth in American Sign Language for the Deaf community.",
+		image: "./images/Deaf-Church-Online.jpg",
+		tags: ["React", "Next.js", "Styled-Components"],
+		code: "#",
+		visit: "#",
 		id: 5,
 	},
 ];
