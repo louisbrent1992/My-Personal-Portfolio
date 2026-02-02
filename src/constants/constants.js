@@ -34,7 +34,7 @@ export const projects = [
 		title: "Tic Tac Toe",
 		description:
 			"A simple tic tac toe game built using HTML, CSS, and JavaScript.",
-		image: "./images/ticTacToeScreen.png",
+		image: "./images/tic-tac-toe-new.png",
 		tags: ["HTML", "CSS", "JavaScript"],
 		code: "https://github.com/louisbrent1992/TicTacToe",
 		visit: "https://tic-tac-toe-eta-wheat.vercel.app/",
