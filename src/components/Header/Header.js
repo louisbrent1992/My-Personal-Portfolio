@@ -28,9 +28,9 @@ const Header = () => (
 					color: "white",
 					marginBottom: "2rem",
 				}}
-				href="https://github.com/louisbrent1992"
+				href="#"
 			>
-				<DiCssdeck size="3rem" /> <Span>Advent Hub Solutions Llc</Span>
+				<DiCssdeck size="3rem" /> <Span>Advent Hub Solutions LLC</Span>
 			</Link>
 		</Div1>
 
