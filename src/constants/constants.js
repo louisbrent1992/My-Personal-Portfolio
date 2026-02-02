@@ -44,7 +44,7 @@ export const projects = [
 		title: `Restaurant Reservation System`,
 		description:
 			"A reservation system tailored for fine dining restaurants. It allows restaurant staff to effortlessly create, track, and modify customer reservations.",
-		image: "./images/dashboardScreen.png",
+		image: "./images/restaurant-reservation-new.png",
 		tags: ["React", "Node", "PostgreSQL", "Express"],
 		code: "https://github.com/louisbrent1992/Restaurant-Reservation-App",
 		visit: "https://restaurant-reservation-app-99tu.onrender.com",
