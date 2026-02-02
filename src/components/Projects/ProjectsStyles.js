@@ -26,7 +26,7 @@ export const Img = styled.img`
 export const Video = styled.video`
   width: 100%;
   height: 100%; /* Fill the container */
-  object-fit: cover;
+  object-fit: contain;
   border-radius: 16px 16px 0 0;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 `;

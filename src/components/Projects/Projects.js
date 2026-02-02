@@ -66,6 +66,7 @@ const VideoPlayer = ({ video, image }) => {
         ref={videoRef}
         loop
         muted
+
         playsInline
         poster={image}
         onPlay={() => setIsPlaying(true)}
