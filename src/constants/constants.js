@@ -11,34 +11,24 @@ export const projects = [
 		id: 0,
 	},
 	{
-		title: "RecipEase Website",
+		title: "Media Streaming Site",
 		description:
-			"The official landing page for RecipEase. Designed to showcase the app's features and provide a seamless link to the App Store.",
-		image: "./images/recipease-website.png",
-		tags: ["React", "Styled-Components", "OpenAI"],
-		code: "https://github.com/louisbrent1992/recipe-generator-api",
-		visit: "https://recipease.kitchen",
+			"A modern media streaming platform featuring a dynamic homepage with featured content, 'Now Playing' sections, and detailed movie views. Users can browse, search, and view ratings for their favorite films.",
+		image: "./images/media-streaming-site.png",
+		tags: ["React", "Styled-Components"],
+		code: "https://github.com/louisbrent1992/WeLoveMovies-App/",
+		visit: "https://welovemovs.netlify.app/",
 		id: 1,
 	},
 	{
 		title: "Music Label Site",
 		description:
 			"A fully responsive React music label website template featuring a resizable navbar, page routing, navigation dropdown menu, and more.",
-		image: "./images/recordLabelScreen.png",
+		image: "./images/music-label-new.png",
 		tags: ["React", "Styled-Components"],
 		code: "https://github.com/louisbrent1992/Record-Label",
-		visit: "http://record-label-two.vercel.app/",
+		visit: "https://pulse-records.netlify.app/",
 		id: 2,
-	},
-	{
-		title: "Tic Tac Toe",
-		description:
-			"A simple tic tac toe game built using HTML, CSS, and JavaScript.",
-		image: "./images/tic-tac-toe-new.png",
-		tags: ["HTML", "CSS", "JavaScript"],
-		code: "https://github.com/louisbrent1992/TicTacToe",
-		visit: "https://tic-tac-toe-eta-wheat.vercel.app/",
-		id: 3,
 	},
 	{
 		title: `Restaurant Reservation System`,
@@ -47,8 +37,8 @@ export const projects = [
 		image: "./images/restaurant-reservation-new.png",
 		tags: ["React", "Node", "PostgreSQL", "Express"],
 		code: "https://github.com/louisbrent1992/Restaurant-Reservation-App",
-		visit: "https://restaurant-reservation-app-99tu.onrender.com",
-		id: 4,
+		visit: "https://lumiere-reservations.netlify.app/",
+		id: 3,
 	},
 	{
 		title: "Deaf Church Online",
@@ -57,7 +47,17 @@ export const projects = [
 		image: "./images/Deaf-Church-Online.jpg",
 		tags: ["React", "Next.js", "Styled-Components"],
 		code: "#",
-		visit: "#",
+		visit: "https://deaf-church-online.netlify.app/",
+		id: 4,
+	},
+	{
+		title: "Tic Tac Toe",
+		description:
+			"A simple tic tac toe game built using HTML, CSS, and JavaScript.",
+		image: "./images/tic-tac-toe-new.png",
+		tags: ["HTML", "CSS", "JavaScript"],
+		code: "https://github.com/louisbrent1992/TicTacToe",
+		visit: "https://simply-ttt.netlify.app/",
 		id: 5,
 	},
 ];
