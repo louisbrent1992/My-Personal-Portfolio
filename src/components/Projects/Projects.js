@@ -1,150 +1,162 @@
-import React, { useRef, useState } from "react";
+import React from "react";
+import styled from "styled-components";
 import { motion } from "framer-motion";
-import { FaPlayCircle } from "react-icons/fa";
-
-import {
-  BlogCard,
-  CardInfo,
-  ExternalLinks,
-  GridContainer,
-  HeaderThree,
-  Hr,
-  StackContainer,
-  Tag,
-  TagList,
-  TitleContent,
-  UtilityList,
-  Img,
-  Video,
-  VideoContainer,
-  PlayButton,
-} from "./ProjectsStyles";
-import {
-  Section,
-  SectionDivider,
-  SectionTitle,
-  SectionText,
-} from "../../styles/GlobalComponents";
+import { AiFillGithub } from "react-icons/ai";
+import { HiOutlineExternalLink } from "react-icons/hi";
 import { projects } from "../../constants/constants";
+import {
+	Section,
+	SectionHeading,
+	Card,
+	Tag,
+	fadeUp,
+	stagger,
+	viewportOnce,
+} from "../../styles/GlobalComponents";
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 50 },
-  visible: (i) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.1,
-      duration: 0.5,
-      ease: "easeOut"
-    }
-  })
-};
+const Grid = styled(motion.div)`
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr));
+	gap: 2.4rem;
 
-const VideoPlayer = ({ video, image }) => {
-  const videoRef = useRef(null);
-  const [isPlaying, setIsPlaying] = useState(false);
+	@media ${({ theme }) => theme.breakpoints.sm} {
+		grid-template-columns: 1fr;
+	}
+`;
 
-  const handlePlay = () => {
-    if (videoRef.current) {
-      if (isPlaying) {
-        videoRef.current.pause();
-      } else {
-        videoRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
+const ProjectCard = styled(Card)`
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+`;
 
-  return (
-    <VideoContainer onClick={handlePlay}>
-      {!isPlaying && (
-        <PlayButton>
-          <FaPlayCircle size="5rem" />
-        </PlayButton>
-      )}
-      <Video
-        ref={videoRef}
-        loop
-        muted
+const Thumb = styled.div`
+	position: relative;
+	aspect-ratio: 16 / 9;
+	overflow: hidden;
+	border-bottom: 1px solid ${({ theme }) => theme.colors.border};
 
-        playsInline
-        poster={image}
-        onPlay={() => setIsPlaying(true)}
-        onPause={() => setIsPlaying(false)}
-      >
-        <source src={video} type="video/mp4" />
-        Your browser does not support the video tag.
-      </Video>
-    </VideoContainer>
-  );
-};
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: top;
+		transition: transform 0.45s ease;
+	}
+
+	${ProjectCard}:hover & img {
+		transform: scale(1.04);
+	}
+`;
+
+const Body = styled.div`
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	padding: 2rem 2.4rem 2.4rem;
+`;
+
+const TitleRow = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1.2rem;
+	margin-bottom: 1rem;
+`;
+
+const Title = styled.h3`
+	font-size: 1.9rem;
+	font-weight: 600;
+`;
+
+const IconLinks = styled.div`
+	display: flex;
+	gap: 1rem;
+
+	a {
+		color: ${({ theme }) => theme.colors.textMuted};
+		display: flex;
+		transition: color 0.2s ease, transform 0.2s ease;
+
+		&:hover {
+			color: ${({ theme }) => theme.colors.accent};
+			transform: translateY(-2px);
+		}
+	}
+`;
+
+const Description = styled.p`
+	font-size: 1.45rem;
+	color: ${({ theme }) => theme.colors.textMuted};
+	flex: 1;
+	margin-bottom: 1.8rem;
+`;
+
+const Tags = styled.div`
+	display: flex;
+	gap: 0.8rem;
+	flex-wrap: wrap;
+`;
 
 const Projects = () => (
-  <Section nopadding id="projects">
-    <SectionDivider />
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-    >
-      <SectionTitle main>Featured Projects</SectionTitle>
-      <SectionText>
-        A selection of my recent work showcasing full-stack development,
-        creative problem-solving, and modern design principles.
-      </SectionText>
-    </motion.div>
-
-    <GridContainer>
-      {projects.map(({ id, image, video, title, description, tags, code, visit }, index) => (
-        <motion.div
-          key={id}
-          custom={index}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={cardVariants}
-          style={{ width: '100%' }}
-        >
-          <BlogCard>
-            {video ? (
-              <VideoPlayer video={video} image={image} />
-            ) : (
-              <Img src={image} alt={title} />
-            )}
-            <TitleContent>
-              <HeaderThree title>{title}</HeaderThree>
-              <Hr />
-            </TitleContent>
-            <CardInfo>{description}</CardInfo>
-            <StackContainer>
-              <TagList>
-                {tags.map((tag, i) => (
-                  <Tag key={i}>{tag}</Tag>
-                ))}
-              </TagList>
-            </StackContainer>
-            <UtilityList>
-              <ExternalLinks
-                target="_blank"
-                href={code}
-                rel="noopener noreferrer"
-              >
-                View Code
-              </ExternalLinks>
-              <ExternalLinks
-                target="_blank"
-                href={visit}
-                rel="noopener noreferrer"
-              >
-                Live Demo
-              </ExternalLinks>
-            </UtilityList>
-          </BlogCard>
-        </motion.div>
-      ))}
-    </GridContainer>
-  </Section>
+	<Section id="projects">
+		<SectionHeading
+			index="04."
+			variants={fadeUp}
+			initial="hidden"
+			whileInView="visible"
+			viewport={viewportOnce}
+		>
+			Projects
+		</SectionHeading>
+		<Grid
+			variants={stagger}
+			initial="hidden"
+			whileInView="visible"
+			viewport={viewportOnce}
+		>
+			{projects.map(({ id, title, description, image, tags, code, visit }) => (
+				<ProjectCard key={id} variants={fadeUp}>
+					<Thumb>
+						<a href={visit} target="_blank" rel="noopener noreferrer">
+							<img src={image} alt={title} loading="lazy" />
+						</a>
+					</Thumb>
+					<Body>
+						<TitleRow>
+							<Title>{title}</Title>
+							<IconLinks>
+								{code && code !== "#" && (
+									<a
+										href={code}
+										target="_blank"
+										rel="noopener noreferrer"
+										aria-label={`${title} source code`}
+									>
+										<AiFillGithub size="2rem" />
+									</a>
+								)}
+								<a
+									href={visit}
+									target="_blank"
+									rel="noopener noreferrer"
+									aria-label={`${title} live site`}
+								>
+									<HiOutlineExternalLink size="2rem" />
+								</a>
+							</IconLinks>
+						</TitleRow>
+						<Description>{description}</Description>
+						<Tags>
+							{tags.map((tag) => (
+								<Tag key={tag}>{tag}</Tag>
+							))}
+						</Tags>
+					</Body>
+				</ProjectCard>
+			))}
+		</Grid>
+	</Section>
 );
 
 export default Projects;

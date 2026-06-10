@@ -1,125 +1,81 @@
 import React from "react";
-import { motion } from "framer-motion";
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-} from "react-icons/ai";
-import { FaTwitter } from "react-icons/fa";
-import { HiMail } from "react-icons/hi";
+import styled from "styled-components";
+import { AiFillGithub, AiFillLinkedin } from "react-icons/ai";
+import { profile, socials } from "../../constants/constants";
 
-import {
-  CompanyContainer,
-  FooterWrapper,
-  LinkColumn,
-  LinkItem,
-  LinkList,
-  LinkTitle,
-  Slogan,
-  SocialContainer,
-  SocialIconsContainer,
-  SocialLink,
-  Copyright,
-} from "./FooterStyles";
+const Wrapper = styled.footer`
+	border-top: 1px solid ${({ theme }) => theme.colors.border};
+`;
 
-const Footer = () => {
-  const currentYear = new Date().getFullYear();
+const Inner = styled.div`
+	max-width: 1080px;
+	margin: 0 auto;
+	padding: 3.2rem 2.4rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2rem;
+	flex-wrap: wrap;
 
-  return (
-    <FooterWrapper>
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.6 }}
-      >
-        <SocialIconsContainer>
-          <CompanyContainer>
-            <LinkTitle style={{ fontSize: '24px', letterSpacing: '0' }}>
-              Let's Connect
-            </LinkTitle>
-            <Slogan>
-              Ready to bring your ideas to life? Let's build something amazing together.
-            </Slogan>
-          </CompanyContainer>
+	@media ${({ theme }) => theme.breakpoints.sm} {
+		flex-direction: column;
+		text-align: center;
+	}
+`;
 
-          <SocialContainer>
-            <SocialLink
-              target="_blank"
-              href="mailto:louisbrent1992@gmail.com"
-              rel="noopener noreferrer"
-              aria-label="Email"
-            >
-              <HiMail size="1.4rem" />
-            </SocialLink>
-            <SocialLink
-              target="_blank"
-              href="https://github.com/louisbrent1992"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-            >
-              <AiFillGithub size="1.4rem" />
-            </SocialLink>
-            <SocialLink
-              target="_blank"
-              href="https://linkedin.com/in/louis-brent"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-            >
-              <AiFillLinkedin size="1.4rem" />
-            </SocialLink>
-            <SocialLink
-              target="_blank"
-              href="https://twitter.com/louisbrent1992"
-              rel="noopener noreferrer"
-              aria-label="Twitter"
-            >
-              <FaTwitter size="1.2rem" />
-            </SocialLink>
-          </SocialContainer>
-        </SocialIconsContainer>
+const Copy = styled.p`
+	font-family: ${({ theme }) => theme.fonts.mono};
+	font-size: 1.3rem;
+	color: ${({ theme }) => theme.colors.textFaint};
 
-        <LinkList>
-          <LinkColumn>
-            <LinkTitle>Navigation</LinkTitle>
-            <LinkItem href="#projects">Projects</LinkItem>
-            <LinkItem href="#tech">Technologies</LinkItem>
-            <LinkItem href="#about">About</LinkItem>
-          </LinkColumn>
-          <LinkColumn>
-            <LinkTitle>Contact</LinkTitle>
-            <LinkItem
-              target="_blank"
-              href="mailto:louisbrent1992@gmail.com"
-              rel="noopener noreferrer"
-            >
-              Email
-            </LinkItem>
-          </LinkColumn>
-          <LinkColumn>
-            <LinkTitle>Social</LinkTitle>
-            <LinkItem
-              target="_blank"
-              href="https://github.com/louisbrent1992"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </LinkItem>
-            <LinkItem
-              target="_blank"
-              href="https://linkedin.com/in/louis-brent"
-              rel="noopener noreferrer"
-            >
-              LinkedIn
-            </LinkItem>
-          </LinkColumn>
-        </LinkList>
+	span {
+		color: ${({ theme }) => theme.colors.accent};
+	}
+`;
 
-        <Copyright>
-          © {currentYear} <span>Louis Brent</span>. All rights reserved.
-        </Copyright>
-      </motion.div>
-    </FooterWrapper>
-  );
-};
+const Socials = styled.div`
+	display: flex;
+	gap: 1.4rem;
+
+	a {
+		color: ${({ theme }) => theme.colors.textMuted};
+		display: flex;
+		transition: color 0.2s ease, transform 0.2s ease;
+
+		&:hover {
+			color: ${({ theme }) => theme.colors.accent};
+			transform: translateY(-2px);
+		}
+	}
+`;
+
+const Footer = () => (
+	<Wrapper>
+		<Inner>
+			<Copy>
+				© {new Date().getFullYear()} {profile.name} <span>·</span> Advent Hub
+				Solutions LLC
+			</Copy>
+			<Socials>
+				<a
+					href={socials.github}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="GitHub"
+				>
+					<AiFillGithub size="2.2rem" />
+				</a>
+				<a
+					href={socials.linkedin}
+					target="_blank"
+					rel="noopener noreferrer"
+					aria-label="LinkedIn"
+				>
+					<AiFillLinkedin size="2.2rem" />
+				</a>
+			</Socials>
+		</Inner>
+	</Wrapper>
+);
 
 export default Footer;

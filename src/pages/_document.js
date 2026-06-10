@@ -29,11 +29,20 @@ export default class MyDocument extends Document {
 	}
 	render() {
 		return (
-			<Html lang="en-GB">
+			<Html lang="en">
 				<Head>
-					<title>Louis Brent`s Portfolio</title>
+					<meta
+						name="description"
+						content="Louis Brent — Systems Support & Infrastructure Professional in Los Angeles, CA. Networking, automation, and full-stack development."
+					/>
+					<link rel="preconnect" href="https://fonts.googleapis.com" />
 					<link
-						href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+						rel="preconnect"
+						href="https://fonts.gstatic.com"
+						crossOrigin="anonymous"
+					/>
+					<link
+						href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap"
 						rel="stylesheet"
 					/>
 				</Head>
